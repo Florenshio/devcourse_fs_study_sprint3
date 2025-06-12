@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Clock from './Clock';
 
 function App() {
 
@@ -8,11 +8,9 @@ function App() {
 
   return (
     <div className="App-header">
-      <h1 className='test'>Todo List {
-      test === 'test' ? 'test' : 'not test'
-      }</h1>
+      <h1 className='test'>React Clock App</h1>
       <p>반갑습니다.</p>
-      {/* 주석 테스트 */}
+      <Clock />
     </div>
   );
 }

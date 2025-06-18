@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import BoardList from './components/BoardList/BoardList';
+import ListContainer from './components/ListContainer/ListContainer';
+import ActionButton from './components/ActionButton/ActionButton';
+import { useAppDispatch } from './hooks/redux';
+import { openModal } from './store/slices/modalSlice';
+import * as styles from './App.css.ts';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useAppDispatch();
+
+  const handleAddBoard = () => {
+    dispatch(openModal({ modalType: 'ADD_BOARD' }));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={styles.appContainer}>
+      <header className={styles.header}>
+        <h1 className={styles.headerTitle}>Todo 보드</h1>
+        <div className={styles.headerActions}>
+          <ActionButton 
+            text="+ 새 보드" 
+            onClick={handleAddBoard} 
+            variant="primary"
+          />
+        </div>
+      </header>
+      <main className={styles.mainContent}>
+        <aside className={styles.sidebar}>
+          <BoardList />
+        </aside>
+        <section className={styles.boardContent}>
+          <ListContainer />
+        </section>
+      </main>
+    </div>
   )
 }
 
-export default App
+export default App;

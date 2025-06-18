@@ -31,8 +31,26 @@ export const headerActions = style({
 });
 
 export const mainContent = style({
+  display: 'flex',
   flex: 1,
   padding: vars.space.lg,
+  overflowX: 'auto',
+});
+
+export const sidebar = style({
+  width: '250px',
+  minWidth: '250px',
+  backgroundColor: vars.colors.gray[100],
+  borderRadius: vars.radii.md,
+  padding: vars.space.md,
+  marginRight: vars.space.lg,
+  overflowY: 'auto',
+  maxHeight: 'calc(100vh - 180px)',
+});
+
+export const boardContent = style({
+  flex: 1,
+  display: 'flex',
   overflowX: 'auto',
 });
 

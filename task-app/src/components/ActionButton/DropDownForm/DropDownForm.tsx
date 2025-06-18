@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAppDispatch } from '../../../hooks/redux';
 import { addBoard, addList, addTask } from '../../../store/slices/boardsSlice';
-import * as styles from './DropDownForm.css';
+import * as styles from './DropDownForm.css.ts';
 
 interface DropDownFormProps {
   type: 'board' | 'list' | 'task';
@@ -49,7 +49,7 @@ const DropDownForm: React.FC<DropDownFormProps> = ({ type, onClose, boardId, lis
             boardId, 
             listId, 
             content: title.trim(), 
-            description: description.trim() 
+            description: description.trim()
           }));
         }
         break;
@@ -89,6 +89,7 @@ const DropDownForm: React.FC<DropDownFormProps> = ({ type, onClose, boardId, lis
   return (
     <div className={styles.dropdownContainer} ref={formRef}>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <h3 className={styles.formTitle}>{getFormTitle()}</h3>
         <input
           type="text"
           className={styles.formInput}

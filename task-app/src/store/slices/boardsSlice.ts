@@ -103,8 +103,8 @@ const boardsSlice = createSlice({
     },
     
     // 태스크 관련 액션
-    addTask: (state, action: PayloadAction<{ boardId: string; listId: string; content: string }>) => {
-      const { boardId, listId, content } = action.payload;
+    addTask: (state, action: PayloadAction<{ boardId: string; listId: string; content: string; description?: string }>) => {
+      const { boardId, listId, content, description = '' } = action.payload;
       const board = state.boards.find(b => b.id === boardId);
       if (board) {
         const list = board.lists.find(l => l.id === listId);
@@ -112,7 +112,7 @@ const boardsSlice = createSlice({
           list.tasks.push({
             id: uuidv4(),
             content,
-            description: '',
+            description,
             completed: false,
           });
         }

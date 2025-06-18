@@ -21,6 +21,13 @@ export const formContainer = style({
   padding: vars.space.md,
 });
 
+export const formTitle = style({
+  fontSize: vars.fontSizes.lg,
+  fontWeight: vars.fontWeights.semibold,
+  marginBottom: vars.space.xs,
+  color: vars.colors.gray[800],
+});
+
 export const formInput = style({
   padding: vars.space.sm,
   border: `1px solid ${vars.colors.gray[300]}`,

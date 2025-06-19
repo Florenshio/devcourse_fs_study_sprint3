@@ -1,6 +1,7 @@
 import BoardList from './components/BoardList/BoardList';
 import ListContainer from './components/ListContainer/ListContainer';
 import ActionButton from './components/ActionButton/ActionButton';
+import ModalRoot from './components/ModalRoot/ModalRoot';
 import { useAppDispatch } from './hooks/redux';
 import { openModal } from './store/slices/modalSlice';
 import * as styles from './App.css.ts';
@@ -32,6 +33,7 @@ function App() {
           <ListContainer />
         </section>
       </main>
+      <ModalRoot />
     </div>
   )
 }

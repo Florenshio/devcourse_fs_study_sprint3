@@ -19,8 +19,7 @@ export const modalContent = style({
   borderRadius: vars.radii.lg,
   boxShadow: vars.shadows.lg,
   width: '100%',
-  maxWidth: '600px',
-  maxHeight: '90vh',
+  maxWidth: '500px',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -52,37 +51,42 @@ export const closeButton = style({
 });
 
 export const modalBody = style({
-  padding: vars.space.md,
-  overflowY: 'auto',
-  flex: 1,
-  maxHeight: '400px',
+  padding: vars.space.lg,
 });
 
-export const logList = style({
-  listStyle: 'none',
+export const confirmMessage = style({
   margin: 0,
-  padding: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  gap: vars.space.md,
-});
-
-export const emptyMessage = style({
-  textAlign: 'center',
-  color: vars.colors.gray[500],
-  padding: vars.space.xl,
+  fontSize: vars.fontSizes.md,
+  color: vars.colors.gray[700],
+  lineHeight: 1.5,
 });
 
 export const modalFooter = style({
   display: 'flex',
   justifyContent: 'flex-end',
+  gap: vars.space.md,
   padding: vars.space.md,
   borderTop: `1px solid ${vars.colors.gray[200]}`,
 });
 
-export const closeModalButton = style({
+export const cancelButton = style({
   padding: `${vars.space.xs} ${vars.space.md}`,
-  backgroundColor: vars.colors.primary,
+  backgroundColor: vars.colors.gray[200],
+  color: vars.colors.gray[700],
+  border: 'none',
+  borderRadius: vars.radii.default,
+  fontSize: vars.fontSizes.md,
+  fontWeight: vars.fontWeights.medium,
+  cursor: 'pointer',
+  transition: vars.transitions.default,
+  ':hover': {
+    backgroundColor: vars.colors.gray[300],
+  },
+});
+
+export const deleteButton = style({
+  padding: `${vars.space.xs} ${vars.space.md}`,
+  backgroundColor: vars.colors.danger,
   color: vars.colors.white,
   border: 'none',
   borderRadius: vars.radii.default,
@@ -91,6 +95,6 @@ export const closeModalButton = style({
   cursor: 'pointer',
   transition: vars.transitions.default,
   ':hover': {
-    backgroundColor: vars.colors.primaryHover,
+    backgroundColor: '#DC2626', // 더 진한 빨간색
   },
 });

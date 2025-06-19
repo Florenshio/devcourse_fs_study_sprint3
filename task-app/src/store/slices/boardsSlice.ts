@@ -172,6 +172,32 @@ const boardsSlice = createSlice({
         }
       }
     },
+    updateTask: (state, action: PayloadAction<{
+      boardId: string;
+      listId: string;
+      taskId: string;
+      updates: {
+        content?: string;
+        description?: string;
+        completed?: boolean;
+      };
+    }>) => {
+      const { boardId, listId, taskId, updates } = action.payload;
+      const board = state.boards.find(b => b.id === boardId);
+      
+      if (board) {
+        const list = board.lists.find(l => l.id === listId);
+        if (list) {
+          const task = list.tasks.find(t => t.id === taskId);
+          if (task) {
+            // 업데이트할 필드만 변경
+            if (updates.content !== undefined) task.content = updates.content;
+            if (updates.description !== undefined) task.description = updates.description;
+            if (updates.completed !== undefined) task.completed = updates.completed;
+          }
+        }
+      }
+    },
   },
 });
 
@@ -185,6 +211,7 @@ export const {
   removeTask,
   toggleTaskComplete,
   moveTask,
+  updateTask,
 } = boardsSlice.actions;
 
 export default boardsSlice.reducer;

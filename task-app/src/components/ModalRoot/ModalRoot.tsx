@@ -4,6 +4,7 @@ import { closeModal } from '../../store/slices/modalSlice';
 import EditModal from '../EditModal/EditModal';
 import LoggerModal from '../LoggerModal/LoggerModal';
 import DeleteBoardModal from '../DeleteBoardModal/DeleteBoardModal';
+import LoginModal from '../LoginModal/LoginModal';
 
 const ModalRoot: React.FC = () => {
   const { isOpen, modalType, modalProps } = useAppSelector((state) => state.modal);
@@ -35,6 +36,8 @@ const ModalRoot: React.FC = () => {
       );
     case 'VIEW_BOARDS':
       return <LoggerModal onClose={handleClose} />;
+    case 'LOGIN':
+      return <LoginModal onClose={handleClose} />;
     default:
       return null;
   }

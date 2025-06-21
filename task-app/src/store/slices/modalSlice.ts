@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 // 모달 타입 정의
-export type ModalType = 'ADD_BOARD' | 'ADD_LIST' | 'ADD_TASK' | 'EDIT_TASK' | 'CONFIRM_DELETE' | 'VIEW_BOARDS' | 'DELETE_BOARD' | null;
+export type ModalType = 'ADD_BOARD' | 'ADD_LIST' | 'ADD_TASK' | 'EDIT_TASK' | 'CONFIRM_DELETE' | 'VIEW_BOARDS' | 'DELETE_BOARD' | 'LOGIN' | null;
 
 interface ModalState {
   isOpen: boolean;

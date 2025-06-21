@@ -28,6 +28,13 @@ export const headerTitle = style({
 export const headerActions = style({
   display: 'flex',
   gap: vars.space.md,
+  alignItems: 'center',
+});
+
+export const userInfo = style({
+  fontSize: vars.fontSizes.md,
+  fontWeight: vars.fontWeights.medium,
+  marginRight: vars.space.md,
 });
 
 export const mainContent = style({

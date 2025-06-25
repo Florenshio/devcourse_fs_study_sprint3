@@ -1,0 +1,36 @@
+.title {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+}
+
+.title-1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.title-2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.title-3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title-4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.title-5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-6 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
